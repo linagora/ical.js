@@ -3,9 +3,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  * Portions Copyright (C) Philipp Kewisch, 2011-2015 */
 
-
 /* istanbul ignore next */
 /* jshint ignore:start */
+if (typeof ICAL !== 'undefined') {
+  module.exports = ICAL;
+  return;
+}
+
 if (typeof module === 'object') {
   // CommonJS, where exports may be different each time.
   ICAL = module.exports;
