@@ -1,6 +1,6 @@
 {
-  "name": "ical.js",
-  "version": "1.1.2",
+  "name": "esn-ical.js",
+  "version": "1.1.3",
   "author": "Philipp Kewisch",
   "contributors": [
     "Github Contributors (https://github.com/mozilla-comm/ical.js/graphs/contributors)"
@@ -9,7 +9,7 @@
   "main": "build/ical.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mozilla-comm/ical.js.git"
+    "url": "https://ci.linagora.com/linagora/lgs/openpaas/esn-ical.js.git"
   },
   "keywords": [
     "calendar",
