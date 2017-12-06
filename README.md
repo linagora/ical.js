@@ -36,13 +36,13 @@ subdirectory.
 You can install ICAL.js via [npm](https://www.npmjs.com/), if you would like to
 use it in node:
 ```
-npm install ical.js
+npm install @linagora/ical.js
 ```
 
 Alternatively, it is also available via [bower](http://bower.io/) for front-end
 development:
 ```
-bower install ical.js
+bower install esn-ical.js
 ```
 
 ICAL.js has no dependencies and uses fairly basic JavaScript. Therefore, it
