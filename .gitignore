@@ -12,3 +12,5 @@ build/benchmark/ical_upstream.js
 build/ical.min.js
 build/ical.min.js.map
 junk/
+.idea
+.vscode
