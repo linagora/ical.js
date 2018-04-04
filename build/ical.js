@@ -6,6 +6,8 @@
 
 /* istanbul ignore next */
 /* jshint ignore:start */
+if (typeof ICAL !== "undefined") { module.exports = ICAL; return; }
+
 if (typeof module === 'object') {
   // CommonJS, where exports may be different each time.
   ICAL = module.exports;

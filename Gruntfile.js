@@ -199,6 +199,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            {
+              match: /\/\* jshint ignore:start \*\//,
+              replacement: '/* jshint ignore:start */\nif (typeof ICAL !== "undefined") { module.exports = ICAL; return; }\n'
+            }
+          ]
+        },
+        files: [
+          { expand: true, flatten: true, src: ['build/ical.js'], dest: 'build/' }
+        ]
+      }
+    },
     release: {
       options: {
         tagName: 'v<%=version%>',
@@ -254,13 +269,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-istanbul');
   grunt.loadNpmTasks('grunt-release');
   grunt.loadNpmTasks('gruntify-eslint');
+  grunt.loadNpmTasks('grunt-replace');
 
   loadOptionalTask('grunt-node-inspector');
 
   grunt.loadTasks('tasks');
 
   grunt.registerTask('default', ['package']);
-  grunt.registerTask('package', ['concat:dist', 'uglify']);
+  grunt.registerTask('package', ['concat:dist', 'uglify', 'replace']);
   grunt.registerTask('coverage', 'mocha_istanbul');
   grunt.registerTask('linters', ['eslint', 'check-browser-build']);
   grunt.registerTask('test-server', ['test-agent-config', 'run-test-server']);
